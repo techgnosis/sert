@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+opt="-text -certopt no_header,no_version,no_serial,no_signame,no_pubkey,no_sigdump,no_aux"
+
+if [ -f "$1" ]; then
+  openssl x509 -in $1 -noout $opt
+else
+  echo |
+  openssl s_client -connect $1:443 2>/dev/null |
+  openssl x509 -noout $opt
+fi
