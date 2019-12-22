@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+if [ -f "$1" ]; then
+  openssl x509 -in $1 -noout -text
+else
+  echo |
+  openssl s_client -connect $1:443 2>/dev/null |
+  openssl x509 -noout -text
+fi
