@@ -15,5 +15,4 @@ if [ -n "$1" ]; then
 fi
 
 # Piped in
-PEM="$(cat /dev/stdin)"
-echo "${PEM}" | openssl x509 -noout -text
+cat /dev/stdin | openssl x509 -noout -text
