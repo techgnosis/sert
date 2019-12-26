@@ -15,4 +15,4 @@ if [ -n "$1" ]; then
 fi
 
 # Piped in
- openssl x509 -noout -text < /dev/stdin
+openssl x509 -noout -text < /dev/stdin
