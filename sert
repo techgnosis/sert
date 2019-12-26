@@ -1,12 +1,12 @@
 #! /usr/bin/env bash
 
-
-
+# Local file
 if [ -f "$1" ]; then
   openssl x509 -in "$1" -noout -text
   exit
 fi
 
+# URL
 if [ -n "$1" ]; then
   echo |
   openssl s_client -connect "$1":443 2>/dev/null |
@@ -14,5 +14,6 @@ if [ -n "$1" ]; then
   exit
 fi
 
+# Piped in
 PEM="$(cat /dev/stdin)"
 echo "${PEM}" | openssl x509 -noout -text
