@@ -1,8 +1,18 @@
 #! /usr/bin/env bash
+
+
+
 if [ -f "$1" ]; then
   openssl x509 -in $1 -noout -text
-else
+  exit
+fi
+
+if [ -n "$1" ]; then
   echo |
   openssl s_client -connect $1:443 2>/dev/null |
   openssl x509 -noout -text
+  exit
 fi
+
+PEM="$(cat /dev/stdin)"
+echo "${PEM}" | openssl x509 -noout -text
