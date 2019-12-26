@@ -1,4 +1,4 @@
-`sert` is a wrapper around the only openssl functionality I use.
+`sert` is a wrapper around the only `openssl` functionality I use.
 
 * Looking at a local PEM-encoded certificate in a file
 * Looking at a local PEM-encoded certificate as a string from STDIN
