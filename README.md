@@ -8,6 +8,6 @@ And it works like you would expect
 
 ```
 sert mycert.pem
-sert reddit.com
 pbpaste | sert
+sert reddit.com
 ```
